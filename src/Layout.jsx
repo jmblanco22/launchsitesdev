@@ -1,9 +1,24 @@
-
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl } from "./utils";
 import { Rocket, Menu, X, Home, Briefcase, Folder, DollarSign, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./components/ui/button";
+import HeroSection from './components/homepage/HeroSection';
+import ServicesPreview from './components/homepage/ServicesPreview';
+import PortfolioPreview from './components/homepage/PortfolioPreview';
+import TestimonialsSection from './components/homepage/TestimonialsSection';
+import CTASection from './components/homepage/CTASection';
+const Home = () => {
+  return (
+    <>
+      <HeroSection />
+      <ServicesPreview />
+      <PortfolioPreview />
+      <TestimonialsSection />
+      <CTASection />
+    </>
+  );
+};
 
 const navigationItems = [
   { title: "Home", url: createPageUrl("Home"), icon: Home },

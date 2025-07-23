@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Import your main layout and all of your pages
+import Layout from './Layout';
+import Home from './Pages/Home';
+import Services from './Pages/Services';
+import Portfolio from './Pages/Portfolio';
+import Contact from './Pages/Contact';
+import ReadyToLaunch from './Pages/ReadytoLaunch';
+import { Button } from '@/components/ui/button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          {/* A Route for each page */}
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/ready-to-launch" element={<ReadyToLaunch />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
